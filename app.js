@@ -447,19 +447,6 @@
     });
   });
 
-  document.querySelector("[data-kaspi]").addEventListener("click", () => {
-    const lines = [
-      "Здравствуйте! Хочу оплатить через Kaspi.",
-      `Товар: ${PRODUCT}`,
-      `Телефон для перевода: +7 (776) 060-50-70`,
-    ];
-    if (hasSizes()) {
-      lines.push(`Размеры: ${cartEntries().map(([s, q]) => `${s}×${q}`).join(", ")}`);
-      lines.push(`Сумма: ${money(totalSum())}`);
-    }
-    openWhatsApp(lines.join("\n"));
-  });
-
   /* ---------- phone mask +7 (___) ___-__-__ ---------- */
   function formatPhone(raw) {
     let digits = String(raw).replace(/\D/g, "");
